@@ -184,25 +184,14 @@ logo.id = "newLogo";
 
 Manipulates the classes for a given element; it is itself an object, with the following methods:
 
-`item(index)`
 
-: Returns the `index`th class of the element
-
-`contains(name)`
-
-: Returns `true` if the element has class `name` and `false` otherwise
-
-`add(name)`
-
-: Adds class `name` to the element
-
-`remove(name)`
-
-: Removes class `name` from the element
-
-`toggle(name)`
-
-: Adds class `name` to the element if it's missing, and removes it if the element has it
+| Method | Description |
+|--------|-------------|
+| `item(index)` | Returns the `index`th class of the element |
+| `contains(name)` | Returns `true` if the element has class `name` and `false` otherwise |
+| `add(name)` | Adds class `name` to the element |
+| `remove(name)` | Removes class `name` from the element |
+| `toggle(name)` | Adds class `name` to the element if it's missing, and removes it if the element has it |
 
 ### `dataset`
 
