@@ -6,34 +6,35 @@ The DOM is accessed and manipulated via a DOM API; while such APIs exist for bas
 
 Any of the methods described below exist under the `document` namespace, ie they are acessed by `document.[methodName]`
 
-**PLEASE NOTE:** this list of methods is by no means exhaustive! These are ony the things you will use most commonly.
+**PLEASE NOTE:** this list of methods is by no means exhaustive! These are ony the things you will use most commonly. The entries marked with **an asterisk \*** are particularly useful.
 
 - [Selecting stuff](#selecting-stuff)
   - [`getElementById()`](#getelementbyid)
   - [`getElementsByClassName()`](#getelementsbyclassname)
   - [`getElementsByTagName()`](#getelementsbytagname)
-  - [`querySelector()`](#queryselector)
-  - [`querySelectorAll()`](#queryselectorall)
+  - [`querySelector() *`](#queryselector-)
+  - [`querySelectorAll() *`](#queryselectorall-)
   - [`parentElement`](#parentelement)
   - [`nextElementSibling`](#nextelementsibling)
   - [`children`](#children)
   - [`firstElementChild`](#firstelementchild)
 - [Attributes](#attributes)
   - [`id`](#id)
-  - [`classList`](#classlist)
+  - [`classList *`](#classlist-)
   - [`dataset`](#dataset)
   - [`hasAttribute()`](#hasattribute)
   - [`getAttribute()`](#getattribute)
   - [`setAttribute()`](#setattribute)
 - [Element manipulation](#element-manipulation)
   - [`createElement()`](#createelement)
-  - [`innerHTML`](#innerhtml)
-  - [`innerText`](#innertext)
+  - [`innerHTML *`](#innerhtml-)
+  - [`innerText *`](#innertext-)
   - [`outerHTML`](#outerhtml)
   - [`outerText`](#outertext)
   - [`insertAdjacentElement()`](#insertadjacentelement)
   - [`appendChild()`](#appendchild)
   - [`removeChild()`](#removechild)
+- [Addendum: CSS-like selectors](#addendum-css-like-selectors)
 
 ## Selecting stuff
 
@@ -66,18 +67,22 @@ Get all elements with the same tag
     // [span#logo, span, span.strong, span, span, span.strong]
 ```
 
-### `querySelector()`
+### `querySelector() *`
 
 Given a CSS-like string, get *a single element* that conforms to it; may contain descendant selectors
+
+For more on these selectors, please see [the addendum](#addendum-css-like-selectors)
 
 ```javascript
     let nav = document.querySelector('nav#navigation ul.nav');
     // <ul class="nav">...</ul>
 ```
 
-### `querySelectorAll()`
+### `querySelectorAll() *`
 
 Given a CSS-like string, get *all elements* that conform to it; may contain descendant selectors
+
+For more on these selectors, please see [the addendum](#addendum-css-like-selectors)
 
 ```javascript
     let navLinks = document.querySelector('nav#navigation ul.nav a.link');
@@ -135,7 +140,7 @@ logo.id = "newLogo";
 // <span id="newLogo">Logo</span>
 ```
 
-### `classList`
+### `classList *`
 
 Manipulates the classes for a given element; it is itself an object, with the following methods:
 
@@ -199,7 +204,7 @@ let header = document.createElement('header');
 // <header />
 ```
 
-### `innerHTML`
+### `innerHTML *`
 
 Sets the HTML inside an element to the specified value
 
@@ -208,7 +213,7 @@ header.innerHTML = "<span>Hello!</span>";
 // <header><span>Hello!</span></header>
 ```
 
-### `innerText`
+### `innerText *`
 
 Sets the text inside an element to the specified value
 
@@ -281,3 +286,28 @@ target.removeChild(inserted);
 //     <div id="extra"></div>
 // </div>
 ```
+
+## Addendum: CSS-like selectors
+
+Some basic CSS knowledge helps; lacking that, here are some things to keep in mind:
+
+* `element`
+    * Any valid element name will select all those elements on the page
+* `.class`
+    * Any class name will select all the elements on the pagewhich share that class
+* `#id`
+    * Any valid (and unique!) ID will select the element with said ID
+* `.class1.class2`
+    * Only those elements which have both classes
+* `parent > child`
+    * Only those child elements which are direct descendants of the parent
+* `parent child`
+    * The elements which are descendants of the parent element, no matter how deep
+* `target + sibling`
+    * The sibling element which is immediately next to the target element; **this selects the sibling**
+* `target ~ sibling`
+    * The sibling element which is *somewhere* on the same level as the target
+
+These can be combined in any way, such that `header nav#navigation a.active + a` is a perfectly valid example (meaning "the link immediately following the active link in the nav element with the 'navigation' ID in the header"). Bear in mind that this sort of thing is overkill.
+
+Less is more!
