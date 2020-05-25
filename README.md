@@ -31,9 +31,9 @@ Any of the methods described below exist under the `document` namespace, ie they
   - [`innerText`](#innertext)
   - [`outerHTML`](#outerhtml)
   - [`outerText`](#outertext)
-  - [`insertAdjacentElement`](#insertadjacentelement)
-  - [`appendChild`](#appendchild)
-  - [`removeChild`](#removechild)
+  - [`insertAdjacentElement()`](#insertadjacentelement)
+  - [`appendChild()`](#appendchild)
+  - [`removeChild()`](#removechild)
 
 ## Selecting stuff
 
@@ -237,7 +237,7 @@ header.outerText = "Hello!";
 // Hello!
 ```
 
-### `insertAdjacentElement`
+### `insertAdjacentElement()`
 
 Inserts a child element in the DOM on one of these positions, relative to the target element: [`beforebegin`,`afterbegin`,`beforeend`,`afterend`]
 
@@ -264,11 +264,11 @@ target.insertAdjacentElement('afterbegin', inserted);
 // </div>
 ```
 
-### `appendChild`
+### `appendChild()`
 
 Inserts a child element as the last element of a target element; essentially functions as `targetElement.insertAdjacentElement('beforeEnd', childElement);`
 
-### `removeChild`
+### `removeChild()`
 
 Removes a child element from a partend element;
 
