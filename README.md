@@ -1,5 +1,13 @@
 # DOM, JavaScript, and You
 
+The **D**ocument **O**bject **M**odel is an abstract representation of the contents of a webpage.
+
+The DOM is accessed and manipulated via a DOM API; while such APIs exist for basically any language out there, you will most likely be using JavaScript.
+
+Any of the methods described below exist under the `document` namespace, ie they are acessed by `document.[methodName]`
+
+**PLEASE NOTE:** this list of methods is by no means exhaustive! These are ony the things you will use most commonly.
+
 - [Selecting stuff](#selecting-stuff)
   - [`getElementById()`](#getelementbyid)
   - [`getElementsByClassName()`](#getelementsbyclassname)
@@ -26,14 +34,6 @@
   - [`innerText`](#innertext)
   - [`outerHTML`](#outerhtml)
   - [`outerText`](#outertext)
-
-The **D**ocument **O**bject **M**odel is an abstract representation of the contents of a webpage.
-
-The DOM is accessed and manipulated via a DOM API; while such APIs exist for basically any language out there, you will most likely be using JavaScript.
-
-Any of the methods described below exist under the `document` namespace, ie they are acessed by `document.[methodName]`
-
-**PLEASE NOTE:** this list of methods is by no means exhaustive! These are ony the things you will use most commonly.
 
 ## Selecting stuff
 
