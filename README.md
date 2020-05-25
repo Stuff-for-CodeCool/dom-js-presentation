@@ -18,9 +18,6 @@ Any of the methods described below exist under the `document` namespace, ie they
   - [`nextElementSibling`](#nextelementsibling)
   - [`children`](#children)
   - [`firstElementChild`](#firstelementchild)
-  - [`insertAdjacentElement`](#insertadjacentelement)
-  - [`appendChild`](#appendchild)
-  - [`removeChild`](#removechild)
 - [Attributes](#attributes)
   - [`id`](#id)
   - [`classList`](#classlist)
@@ -34,6 +31,9 @@ Any of the methods described below exist under the `document` namespace, ie they
   - [`innerText`](#innertext)
   - [`outerHTML`](#outerhtml)
   - [`outerText`](#outertext)
+  - [`insertAdjacentElement`](#insertadjacentelement)
+  - [`appendChild`](#appendchild)
+  - [`removeChild`](#removechild)
 
 ## Selecting stuff
 
@@ -122,51 +122,6 @@ Gets the selected element's first descendant
     let nav = document.querySelector('nav#navigation ul.nav');
     console.log(nav.children);
     // <li class="navlink">...</li>
-```
-
-### `insertAdjacentElement`
-
-Inserts a child element in the DOM on one of these positions, relative to the target element: [`beforebegin`,`afterbegin`,`beforeend`,`afterend`]
-
-The positions are as follows:
-
-```html
-<!-- beforebegin -->
-<div id="target">
-    <!-- afterbegin -->
-    <div id="extra"></div>
-    <!-- beforeend -->
-</div>
-<!-- afterend -->
-```
-
-```javascript
-let inserted = document.querySelector('#inserted');
-let target = document.querySelector('#target');
-target.insertAdjacentElement('afterbegin', inserted);
-
-// <div id="target">
-//     <div id="inserted"></div>
-//     <div id="extra"></div>
-// </div>
-```
-
-### `appendChild`
-
-Inserts a child element as the last element of a target element; essentially functions as `targetElement.insertAdjacentElement('beforeEnd', childElement);`
-
-### `removeChild`
-
-Removes a child element from a partend element;
-
-```javascript
-let inserted = document.querySelector('#inserted');
-let target = document.querySelector('#target');
-target.removeChild(inserted);
-
-// <div id="target">
-//     <div id="extra"></div>
-// </div>
 ```
 
 ## Attributes
@@ -280,4 +235,49 @@ Replaces the HTML of the specified element with the specified text
 ```javascript
 header.outerText = "Hello!";
 // Hello!
+```
+
+### `insertAdjacentElement`
+
+Inserts a child element in the DOM on one of these positions, relative to the target element: [`beforebegin`,`afterbegin`,`beforeend`,`afterend`]
+
+The positions are as follows:
+
+```html
+<!-- beforebegin -->
+<div id="target">
+    <!-- afterbegin -->
+    <div id="extra"></div>
+    <!-- beforeend -->
+</div>
+<!-- afterend -->
+```
+
+```javascript
+let inserted = document.querySelector('#inserted');
+let target = document.querySelector('#target');
+target.insertAdjacentElement('afterbegin', inserted);
+
+// <div id="target">
+//     <div id="inserted"></div>
+//     <div id="extra"></div>
+// </div>
+```
+
+### `appendChild`
+
+Inserts a child element as the last element of a target element; essentially functions as `targetElement.insertAdjacentElement('beforeEnd', childElement);`
+
+### `removeChild`
+
+Removes a child element from a partend element;
+
+```javascript
+let inserted = document.querySelector('#inserted');
+let target = document.querySelector('#target');
+target.removeChild(inserted);
+
+// <div id="target">
+//     <div id="extra"></div>
+// </div>
 ```
