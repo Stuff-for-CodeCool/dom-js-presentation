@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font: 18px/1.5 sans-serif;
+            padding: 1em;
+            display: grid;
+            grid-gap: .5em;
+            grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+        }
+        body > * {
+            padding: .5em;
+            border: 2px solid;
+            border-radius: .25em;
+        }
+        li { margin-left: 1em; }
+        .active { background: bisque; color: darkgoldenrod; }
+    </style>
+</head>
+<body>
+    <div id="firstid">#firstid</div>
+    <div id="secondid">#secondid</div>
+    <div class="bing">.bing</div>
+    <div class="bing">.bing</div>
+    <div class="bing bong">.bing.bong</div>
+    <div class="bing bong">.bing.bong</div>
+    <div class="bing bong">.bing.bong</div>
+    <div class="bing">.bing</div>
+    <div id="bam" class="bong">#bam.bong</div>
+    <article class="bong">article.bong</article>
+    <article>article</article>
+    <ul>
+        <li>ul li</li>
+        <li>ul li</li>
+        <li>ul li</li>
+        <li>ul li</li>
+        <li>ul li</li>
+    </ul>
+    <ol>
+        <li class="list">ol li.list</li>
+        <li class="list">ol li.list</li>
+        <li class="list">ol li.list</li>
+        <li class="list">ol li.list</li>
+        <li class="list">ol li.list</li>
+    </ol>
+    <article>
+        <p data-alabala="portocala1">p[data-alabala]</p>
+        <p data-alabala="portocala2">p[data-alabala]</p>
+        <p data-alabala="portocala3">p[data-alabala]</p>
+    </article>
+</body>
+</html>
