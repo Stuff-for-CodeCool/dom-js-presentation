@@ -311,3 +311,6 @@ Some basic CSS knowledge helps; lacking that, here are some things to keep in mi
 These can be combined in any way, such that `header nav#navigation a.active + a` is a perfectly valid example (meaning "the link immediately following the active link in the nav element with the 'navigation' ID in the header"). Bear in mind that this sort of thing is overkill.
 
 Less is more!
+
+And always remember, [MDN is your friend!](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+
