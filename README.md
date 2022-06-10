@@ -8,33 +8,29 @@ Any of the methods described below exist under the `document` namespace, ie they
 
 **PLEASE NOTE:** this list of methods is by no means exhaustive! These are ony the things you will use most commonly. The entries marked with **an asterisk \*** are particularly useful.
 
-- [Selecting stuff](#selecting-stuff)
-  - [`getElementById()`](#getelementbyid)
-  - [`getElementsByClassName()`](#getelementsbyclassname)
-  - [`getElementsByTagName()`](#getelementsbytagname)
-  - [`querySelector() *`](#queryselector-)
-  - [`querySelectorAll() *`](#queryselectorall-)
-  - [`parentElement`](#parentelement)
-  - [`nextElementSibling`](#nextelementsibling)
-  - [`children`](#children)
-  - [`firstElementChild`](#firstelementchild)
-- [Attributes](#attributes)
-  - [`id`](#id)
-  - [`classList *`](#classlist-)
-  - [`dataset`](#dataset)
-  - [`hasAttribute()`](#hasattribute)
-  - [`getAttribute()`](#getattribute)
-  - [`setAttribute()`](#setattribute)
-- [Element manipulation](#element-manipulation)
-  - [`createElement()`](#createelement)
-  - [`innerHTML *`](#innerhtml-)
-  - [`innerText *`](#innertext-)
-  - [`outerHTML`](#outerhtml)
-  - [`outerText`](#outertext)
-  - [`insertAdjacentElement()`](#insertadjacentelement)
-  - [`appendChild()`](#appendchild)
-  - [`removeChild()`](#removechild)
-- [Addendum: CSS-like selectors](#addendum-css-like-selectors)
+- [`getElementById()`](#getelementbyid)
+- [`getElementsByClassName()`](#getelementsbyclassname)
+- [`getElementsByTagName()`](#getelementsbytagname)
+- [`querySelector() *`](#queryselector-)
+- [`querySelectorAll() *`](#queryselectorall-)
+- [`parentElement`](#parentelement)
+- [`nextElementSibling`](#nextelementsibling)
+- [`children`](#children)
+- [`firstElementChild`](#firstelementchild)
+- [`id`](#id)
+- [`classList *`](#classlist-)
+- [`dataset`](#dataset)
+- [`hasAttribute()`](#hasattribute)
+- [`getAttribute()`](#getattribute)
+- [`setAttribute()`](#setattribute)
+- [`createElement()`](#createelement)
+- [`innerHTML *`](#innerhtml-)
+- [`innerText *`](#innertext-)
+- [`outerHTML`](#outerhtml)
+- [`outerText`](#outertext)
+- [`insertAdjacentElement()`](#insertadjacentelement)
+- [`appendChild()`](#appendchild)
+- [`removeChild()`](#removechild)
 
 ## Selecting stuff
 
@@ -125,7 +121,7 @@ Gets the selected element's first descendant
 
 ```javascript
     let nav = document.querySelector('nav#navigation ul.nav');
-    console.log(nav.children);
+    console.log(nav.firstElementChild);
     // <li class="navlink">...</li>
 ```
 
